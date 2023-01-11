@@ -1,6 +1,6 @@
 # line-sheet-todo-app
 
-This template should help get you started developing with Vue 3 in Vite.
+When you hear the TODO Line Sheet app, you probably say to yourself, oh, what's this nonsense. But this Bullshit is not ordinary bullshit, it's just a simple program. Without anything time-consuming and extra on the side. In fact, all ToDo apps were time-consuming for me. It would take a programmer a long time to register a simple task in these programs, but you are an engineer and you don't want to waste your time. So just write the title of your work in one line and add features to your work with Hot Keys. Here your tasks are nothing but a simple line to which you add more things
 
 ## Recommended IDE Setup
 
