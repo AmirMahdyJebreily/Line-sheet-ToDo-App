@@ -1,9 +1,11 @@
 <script setup>
-import HeaderSection from '../components/App/HeaderSection.vue'
+import Hoverbadget from '../components/App/Utils/Hoverbadget.vue';
+
+
 </script>
 
 <template>
   <main>
-    <HeaderSection />
+    
   </main>
 </template>

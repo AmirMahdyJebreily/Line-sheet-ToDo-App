@@ -7,7 +7,14 @@ module.exports = {
     "./src/components/**/*.vue"
   ],
   theme: {
-    extend: {},
+    extend: {
+      colors: {
+        'badget-bg-soft-black' : '#070707'
+      },
+      animation: {
+        'ping-fast': 'ping 500ms ease-out infinite',
+      }
+    },
   },
   plugins: [],
 }

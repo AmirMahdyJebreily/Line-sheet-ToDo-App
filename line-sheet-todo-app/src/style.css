@@ -1,3 +1,27 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-neutral-900 text-gray-100 font-mono tracking-tight;
+  }
+}
+
+@layer utilities {
+  .hover-badget{
+    @apply inline-flex flex-col items-start justify-center px-2 pb-1 pt-1.5 max-w-[15rem] bg-badget-bg-soft-black text-sm text-gray-400 italic border-black border-2 rounded-md transition-opacity
+  }
+  .hover-badget-bottom-right {
+    @apply absolute top-8 left-2
+  }
+  .hover-badget-bottom-left {
+    @apply absolute top-8 right-2
+  }
+  .hover-badget-top-left {
+    @apply absolute bottom-8 right-2
+  }
+  .hover-badget-top-right {
+    @apply absolute bottom-8 left-2
+  }
+}
