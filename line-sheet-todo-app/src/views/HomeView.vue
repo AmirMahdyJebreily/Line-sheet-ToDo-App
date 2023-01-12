@@ -5,7 +5,9 @@ import Hoverbadget from '../components/App/Utils/Hoverbadget.vue';
 </script>
 
 <template>
-  <main>
-    
+  <main class="">
+    <div class="">
+
+    </div>
   </main>
 </template>
