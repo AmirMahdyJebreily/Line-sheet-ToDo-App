@@ -6,6 +6,47 @@
   body {
     @apply bg-neutral-900 text-gray-100 font-mono tracking-tight;
   }
+  #app{
+    @apply w-screen h-screen overflow-hidden
+  }
+
+  /* width */
+  .scroll-bar::-webkit-scrollbar {
+    width: 7px;
+  }
+  /* Track */
+  .scroll-bar::-webkit-scrollbar-track {
+    background: #ffffff05;
+  }
+  /* Handle */
+  .scroll-bar::-webkit-scrollbar-thumb {
+    border-radius: 1000px;
+    background: #7785;
+    transition: all 0.2s;
+  }
+  /* Handle on hover */
+  .scroll-bar::-webkit-scrollbar-thumb:hover {
+    background: #5555;
+  }
+
+  .scroll-bar-horiz::-webkit-scrollbar {
+    width: 0px;
+    height: 2px;
+  }
+  /* Track */
+  .scroll-bar-horiz::-webkit-scrollbar-track {
+    background: #ffffff05;
+  }
+  /* Handle */
+  .scroll-bar-horiz::-webkit-scrollbar-thumb {
+    border-radius: 1000px;
+    background: #7785;
+    transition: all 0.2s;
+  }
+  /* Handle on hover */
+  .scroll-bar-horiz::-webkit-scrollbar-thumb:hover {
+    background: #5555;
+  }
 }
 
 @layer utilities {
@@ -24,4 +65,6 @@
   .hover-badget-top-right {
     @apply absolute bottom-8 left-2
   }
+
+  
 }
