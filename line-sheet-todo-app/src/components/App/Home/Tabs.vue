@@ -1,6 +1,6 @@
 <script setup>
 import Tab from './Tabs/Tab.vue';
-import { ref } from 'vue';
+import { ref,inject } from 'vue';
 const componentKey = ref(0);
 
 const forceRerender = () => {
@@ -12,22 +12,14 @@ const forceRerender = () => {
     }
 };
 
+const storageKey = inject("STORAGE_KEY");
+const data = JSON.parse(localStorage.getItem(storageKey));
+
 </script>
 
 <template>
-    <div class="flex items-stretch justify-start scroll-px-4 w-full overflow-x-auto scroll-bar-horiz h-[3.1rem] bg-black/20 divide-x divide-black/20"
+    <div class="flex flex-col items-stretch justify-start scroll-py-4 h-full overflow-y-auto scroll-bar w-72 bg-black/20 divide-y divide-black/20"
         @click="forceRerender()">
-        <Tab tabId="1" :key="componentKey">
-            tab1
-        </Tab>
-        <Tab tabId="2" :key="componentKey">
-            tab2
-        </Tab>
-        <Tab tabId="3" :key="componentKey">
-            tab3
-        </Tab>
-        <Tab tabId="4" :key="componentKey">
-            tab4
-        </Tab>
+        <Tab v-for="lineSheet in data.lineSheets" :tabId="lineSheet.id" :title="lineSheet.name" :key="componentKey" />
     </div>
 </template>

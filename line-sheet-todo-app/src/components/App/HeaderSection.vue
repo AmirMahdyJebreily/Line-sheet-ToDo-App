@@ -12,7 +12,7 @@ import IconButton from './Utils/IconButton.vue'
                     Line sheet todo app <span class="">>_</span>
                 </h1>
                 <h2 class="text-xs text-gray-400 italic hidden sm:block">.:: Here your tasks are nothing but a <span
-                        class="text-gray-500">simple line</span> to which you add more things...</h2>
+                        class="text-gray-400/80">simple line</span> to which you add more things...</h2>
             </div>
         </div>
         <div class="flex justify-center items-center gap-2">
