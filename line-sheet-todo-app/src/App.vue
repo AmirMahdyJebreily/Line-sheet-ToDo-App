@@ -55,7 +55,7 @@ onMounted(() => {
 </script>
 
 <template>
-  <header>
+  <header class="px-4 pt-4">
     <HeaderSection />
   </header>
 

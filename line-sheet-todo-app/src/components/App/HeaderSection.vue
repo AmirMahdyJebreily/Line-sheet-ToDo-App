@@ -4,7 +4,7 @@ import IconButton from './Utils/IconButton.vue'
 </script>
 
 <template>
-    <div class="flex justify-between items-stretch px-6 py-2 w-full bg-gray-100/5">
+    <div class="flex justify-between items-stretch px-3 py-2 w-full bg-[#1D1F22] border border-white/10 rounded-lg">
         <div class="flex justify-start items-center gap-2">
             <TopbarIcon />
             <div class="flex flex-col justify-center items-start gap-0">

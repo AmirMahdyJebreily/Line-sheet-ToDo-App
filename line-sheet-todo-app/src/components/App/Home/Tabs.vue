@@ -18,8 +18,11 @@ const data = JSON.parse(localStorage.getItem(storageKey));
 </script>
 
 <template>
-    <div class="flex flex-col items-stretch justify-start scroll-py-4 h-full overflow-y-auto scroll-bar w-72 bg-black/20 divide-y divide-black/20"
+    <div class="flex flex-col items-stretch justify-start scroll-py-4 h-full overflow-y-auto scroll-bar w-72 bg-gray-900/20 divide-y divide-white/5 border border-white/10 rounded-lg"
         @click="forceRerender()">
         <Tab v-for="lineSheet in data.lineSheets" :tabId="lineSheet.id" :title="lineSheet.name" :key="componentKey" />
+        <Tab v-for="lineSheet in data.lineSheets" :tabId="(lineSheet.id+2)" :title="lineSheet.name" :key="componentKey" />
+        <Tab v-for="lineSheet in data.lineSheets" :tabId="(lineSheet.id+3)" :title="lineSheet.name" :key="componentKey" />
+        <Tab v-for="lineSheet in data.lineSheets" :tabId="(lineSheet.id+4)" :title="lineSheet.name" :key="componentKey" />
     </div>
 </template>

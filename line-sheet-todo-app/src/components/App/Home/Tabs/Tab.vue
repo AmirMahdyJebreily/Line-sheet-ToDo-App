@@ -27,7 +27,7 @@ const activity = reactive({ active: route.params.id == props.tabId });
     <template v-if="(activity.active == true)">
         <RouterLink :to="(('/') + props.tabId)" :title="props.title">
             <div
-                class="bg-main flex items-center justify-center pr-3 pl-2 py-3 gap-2 hover:bg-gray-400/20 w-full">
+                class="bg-blue-100/5 flex items-center justify-center pr-3 pl-2 py-3 gap-2 hover:bg-gray-400/20 w-full">
                 <div class=" flex justify-center items-center gap-1">
                     <span class="h-5 w-1 bg-gray-200/80 rounded-full m-auto"></span>
                     <Sheeticon />
@@ -46,7 +46,7 @@ const activity = reactive({ active: route.params.id == props.tabId });
     <template v-else>
         <RouterLink :to="(('/') + props.tabId)" :title="props.title">
             <div
-                class="flex items-center justify-center pr-3 pl-2 py-3 font-thin gap-2 text-gray-400 hover:text-gray-300 hover:bg-gray-400/20 transition-colors duration-200 h-full">
+                class="flex items-center justify-center pr-3 pl-2 py-3 font-thin gap-2 bg-zinc-900/50 text-gray-400 hover:text-gray-300 hover:bg-gray-400/20 transition-colors duration-200 h-full">
                 <div class=" flex justify-center items-center gap-1">
                     <span class="h-5 w-1 bg-zinc-900/10 rounded-full m-auto"></span>
                     <Sheeticon />
