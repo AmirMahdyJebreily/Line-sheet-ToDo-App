@@ -21,6 +21,6 @@ const linesheets = GetAllLineSheets();
 <template>
     <div class="flex flex-col items-stretch justify-start scroll-py-4 h-full overflow-y-auto scroll-bar w-72 bg-gray-900/20 divide-y divide-white/5 border border-white/10 rounded-lg"
         @click="forceRerender()">
-        <Tab v-for="lineSheet in linesheets" :tabId="lineSheet.id" :title="lineSheet.name" :key="componentKey" />
+        <Tab v-for="lineSheet in linesheets" :tabId="lineSheet.id" :title="lineSheet.name" :key="componentKey + lineSheet.id" />
     </div>
 </template>

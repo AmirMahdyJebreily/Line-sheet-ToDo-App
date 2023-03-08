@@ -1,7 +1,33 @@
 <script setup>
+import { watch, ref } from 'vue';
+import { useRoute } from 'vue-router';
 import Tabs from '../components/App/Home/Tabs.vue';
-import Checkbox from '../components/App/Home/TodoLines/Utils/Checkbox.vue';
+import Line from '../components/App/Home/TodoLines/Line.vue';
+import { getAllToDoLines, currentLineSheet, setSelectedTab } from '../scripts/LinesManager';
+import TopbarIcon from "../components/icons/TopbarIcon.vue"
 
+const route = useRoute();
+
+const Lines = ref([]);
+const uiKey = ref(0)
+
+if (currentLineSheet.value === -1) {
+  setSelectedTab(route.params.id)
+}
+
+watch(currentLineSheet, () => {
+
+  Lines.value = getAllToDoLines(currentLineSheet.value);;
+  refUI()
+})
+
+function enterHandel(args) {
+  console.log("enter was pressed and get value : " + args);
+}
+
+function refUI() {
+  uiKey.value = (uiKey.value == 0) ? 1 : 0
+}
 
 </script>
 
@@ -11,23 +37,24 @@ import Checkbox from '../components/App/Home/TodoLines/Utils/Checkbox.vue';
       class="w-full bg-gradient-to-tr from-main to-white/5 via-main/20 h-full flex justify-center items-stretch rounded-lg m-auto shadow-sm shadow-gray-50/10 overflow-hidden p-2 gap-2">
       <Tabs />
       <section
-        class="flex-1 bg-gray-900/20 border border-white/10 rounded-lg font-mono text-gray-300/80 overflow-hidden py-2">
+        class="flex-1 bg-gray-900/20 border border-white/10 rounded-lg font-mono text-gray-300/80 overflow-hidden py-2" :key="uiKey">
 
         <!-- lines list -->
-        <div class="flex flex-col items-start justify-start pb-2">
-
-          <div class="flex items-center justify-start text px-4">
-
-            <Checkbox />
-            <span class="opacity-50 pl-4 pr-2 w-[65.59px]">1</span>
-            <p class="bg-transparent outline-none border-none w-full h-full px-3 opacity-75"> Do something....</p>
-          </div>
+        <div v-if="Lines.length > 0" class="flex flex-col items-start justify-start pb-2">
+          <Line v-for="line in Lines" :Id="line.id" :Value="line.title" :Chacked="line.checked" @enter="enterHandel" />
         </div>
 
-        <div class="w-full h-full flex items-start justify-start text px-4 bg-black/20">
-          <input class="bg-transparent outline-none border-none w-full align-middle px-3 opacity-75" type="text" />
+        <div v-else class="flex flex-col justify-center items-center w-full h-full p-4">
+          <TopbarIcon />
+          <h1 class="sm:text-xl text-lg text-gray-300">
+            Line sheet todo app <span class="">>_</span>
+          </h1>
+          <p class="text-sm bg-black/40 py-4 text-gray-400 italic hidden sm:block">Console.WriteLine("Hello User 👋")</p>
         </div>
 
+        <!-- <div class="w-full h-full flex items-start justify-start text px-4 bg-black/20">
+                <input class="bg-transparent outline-none border-none w-full align-middle px-3 opacity-75" type="text" />
+              </div> -->
 
       </section>
     </div>

@@ -5,7 +5,7 @@ export const storageKey = "jcs_lsh_todoslist"
 export const currentLineSheet = ref(-1);
 
 export let data = {
-    'lineSheets': [
+    lineSheets : [
         {
             id: 0,
             name: 'School Hobbies',
@@ -29,7 +29,7 @@ export let data = {
             Todos: [
                 {
                     id: 0,
-                    title: 'Some works to do...',
+                    title: 'Some works to do about my projects...',
                     checked: false,
                     addonAttrs: [
                         {
@@ -61,5 +61,11 @@ function Load() {
 
 export function setSelectedTab(id) {
     currentLineSheet.value = id;
+}
+
+export function getAllToDoLines(lineSheetId) {
+    console.log(lineSheetId);
+    console.log(data.lineSheets.find(c => c.id == lineSheetId));
+    return data.lineSheets.find(c => c.id == lineSheetId).Todos;
 }
 
