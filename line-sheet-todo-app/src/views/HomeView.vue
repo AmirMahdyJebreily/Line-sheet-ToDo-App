@@ -47,9 +47,10 @@ function refUI() {
         <div v-else class="flex flex-col justify-center items-center w-full h-full p-4">
           <TopbarIcon />
           <h1 class="sm:text-xl text-lg text-gray-300">
-            Line sheet todo app <span class="">>_</span>
+            Line sheet todo app <span class="text-gray-600">>_</span>
           </h1>
-          <p class="text-sm bg-black/40 py-4 text-gray-400 italic hidden sm:block">Console.WriteLine("Hello User 👋")</p>
+          <h2 class="text-sm text-gray-400 hidden sm:block pt-1 pb-5">for the programmers who forget to work</h2>
+          <p class="text-sm bg-black/30 py-3 px-6 rounded-md shadow-md text-gray-400 italic hidden sm:block"><span class="pr-6 opacity-50 select-none">1.</span>Console.WriteLine("Hello User 👋");</p>
         </div>
 
         <!-- <div class="w-full h-full flex items-start justify-start text px-4 bg-black/20">
