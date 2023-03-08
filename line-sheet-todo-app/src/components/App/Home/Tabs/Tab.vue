@@ -42,7 +42,7 @@ watch(route.params.id, (newVal) => {
 </script>
 
 <template>
-    <div @click="onClick()" :title="props.title" :class="mainTagClasses" class="select-none">
+    <div @click="onClick()" :title="props.title" :class="mainTagClasses" class="select-none cursor-pointer">
         <div class="flex justify-center items-center gap-1">
             <span
                 :class="(activity.value) ? 'h-5 w-1 bg-gray-200/80 rounded-full m-auto' : 'h-5 w-1 bg-zinc-900/10 rounded-full m-auto'"></span>

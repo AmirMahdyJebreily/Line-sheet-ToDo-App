@@ -7,7 +7,7 @@ export const currentLineSheet = ref(-1);
 export let data = {
     lineSheets : [
         {
-            id: 0,
+            id: 10,
             name: 'School Hobbies',
             Todos: [
                 {
@@ -24,7 +24,7 @@ export let data = {
             ]
         },
         {
-            id: 1,
+            id: 11,
             name: 'My Projects',
             Todos: [
                 {
@@ -64,8 +64,10 @@ export function setSelectedTab(id) {
 }
 
 export function getAllToDoLines(lineSheetId) {
-    console.log(lineSheetId);
-    console.log(data.lineSheets.find(c => c.id == lineSheetId));
     return data.lineSheets.find(c => c.id == lineSheetId).Todos;
+}
+
+export function addLine(lineSheetId) {
+    
 }
 
